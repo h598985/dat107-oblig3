@@ -6,11 +6,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema = "oblig3_jpa")
+@Table(name = "prosjektdeltagelse")
 public class Prosjektdeltagelse {
 	
 	@Id
@@ -18,8 +19,13 @@ public class Prosjektdeltagelse {
     private int prosjektdeltagelse_Id;
     
     private int timer;
+    
     private String rolle;
+    
+    @ManyToOne()
     private Ansatt ansatt;
+    
+    @ManyToOne()
     private Prosjekt prosjekt;
 
     

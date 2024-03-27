@@ -3,12 +3,15 @@ package com.dat107.oblig3.model;
 
 
 import java.sql.Date;
-
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -31,6 +34,12 @@ public class Ansatt {
     private String stilling;
 
     private Integer maanedslonn;
+    
+    @ManyToOne()
+    private Avdeling avdeling;
+    
+    @OneToMany()
+    private List<Prosjektdeltagelse> prosjektdeltagelser;
     
     
    
