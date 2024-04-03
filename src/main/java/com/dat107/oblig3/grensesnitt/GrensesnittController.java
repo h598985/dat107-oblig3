@@ -34,73 +34,85 @@ public class GrensesnittController {
 	
 	public void start() {
 		
-		System.out.println("\nKategorier");
-		System.out.println("\n1. Ansatt");
-		System.out.println("\n2. Avdeling");
-		System.out.println("\n3. Prosjekt");
-		 System.out.println("\n0. Avslutt programmet");
+		while(true) {
 		
-        int valg = scanner.nextInt();
-        scanner.nextLine(); 
-		
-		 switch (valg) {
-		 
-         case 1:
-        	 
-				System.out.println("\nKategori: Ansatt");
-				System.out.println("\n1. Søk etter ansatt med ID");
-				System.out.println("\n2. Søk etter ansatt med BRUKERNAVN");
-				System.out.println("\n3. List alle ansatte");
-				System.out.println("\n4. Oppdater stilling til ansatt");
-				System.out.println("\n5. Legg til ny ansatt");
-				System.out.println("\n6. Fjern ansatt");
-				
-			    int ansattValg = scanner.nextInt();
-           
-             break;
-             
-         case 2:
-        	 
-				System.out.println("\nKategori: Avdeling");
-				System.out.println("\n1. Søk etter avdeling med ID");
-				System.out.println("\n2. List alle ansatte i avdeling");
-				System.out.println("\n3. Oppdater avdeling til ansatt");
-				System.out.println("\n4. Legg til ny avdeling");
-				System.out.println("\n5. Fjern en avdeling");
+
+			System.out.println("\nKategorier");
+			System.out.println("\n1. Ansatt");
+			System.out.println("\n2. Avdeling");
+			System.out.println("\n3. Prosjekt");
+			 System.out.println("\n0. Avslutt programmet");
 			
-				 int avdelingValg = scanner.nextInt();
-            
-             break;
-             
-         case 3:
-        	 
-     		System.out.println("\nKategori: Prosjekt");
-    		System.out.println("\n1. Søk etter prosjekt med ID");
-    		System.out.println("\n2. Legg til et nytt prosjekt");
-    		System.out.println("\n3. List alle prosjekter");
-    		System.out.println("\n4. List detaljert info om prosjekt");
-    		System.out.println("\n5. Fjern prosjekt");
-    		
-//    		System.out.println("\n6. Legg til ansatt på prosjekt");
-//    		System.out.println("\n7. Legg til timer for ansatt");
-//    		System.out.println("\n8. Fjern ansatt fra prosjekt");
+	        int valg = scanner.nextInt();
+	        scanner.nextLine(); 
+			
+			 switch (valg) {
+			 
+	         case 1:
+	        	 
+					System.out.println("\nKategori: Ansatt");
+					System.out.println("\n1. Søk etter ansatt med ID");
+					System.out.println("\n2. Søk etter ansatt med BRUKERNAVN");
+					System.out.println("\n3. List alle ansatte");
+					System.out.println("\n4. Oppdater stilling til ansatt");
+					System.out.println("\n5. Legg til ny ansatt");
+					System.out.println("\n6. Fjern ansatt");
+					
+				    int ansattValg = scanner.nextInt();
+				    
+				   ansattKategori(ansattValg);
+	           
+	             break;
+	             
+	         case 2:
+	        	 
+					System.out.println("\nKategori: Avdeling");
+					System.out.println("\n1. Søk etter avdeling med ID");
+					System.out.println("\n2. List alle ansatte i avdeling");
+					System.out.println("\n3. Oppdater avdeling til ansatt");
+					System.out.println("\n4. Legg til ny avdeling");
+					System.out.println("\n5. Fjern en avdeling");
 				
-				 int prosjektValg = scanner.nextInt();
-             
-             break;
-             
-         case 0:
-        	 
-             System.out.println("Programmet avsluttes.");
-             
-             return;
-             
-         default:
-        	 
-        	 System.out.println("\nUgyldig valg, skriv noe for å prøv igjen.");
-        	 
-        	 valg = scanner.nextInt();
-     }
+					 int avdelingValg = scanner.nextInt();
+					 
+					 avdelingKategori(avdelingValg);
+	            
+	             break;
+	             
+	         case 3:
+	        	 
+	     		System.out.println("\nKategori: Prosjekt");
+	    		System.out.println("\n1. Søk etter prosjekt med ID");
+	    		System.out.println("\n2. Legg til et nytt prosjekt");
+	    		System.out.println("\n3. List alle prosjekter");
+	    		System.out.println("\n4. List detaljert info om prosjekt");
+	    		System.out.println("\n5. Fjern prosjekt");
+	    		
+//	    		System.out.println("\n6. Legg til ansatt på prosjekt");
+//	    		System.out.println("\n7. Legg til timer for ansatt");
+//	    		System.out.println("\n8. Fjern ansatt fra prosjekt");
+					
+					 int prosjektValg = scanner.nextInt();
+					 
+					 prosjektKategori(prosjektValg);
+	             
+	             break;
+	             
+	         case 0:
+	        	 
+	             System.out.println("Programmet avsluttes.");
+	             
+	             return;
+	             
+	         default:
+	        	 
+	        	 System.out.println("\nUgyldig valg, skriv noe for å prøv igjen.");
+	        	 
+	        	 valg = scanner.nextInt();
+	     }
+			 
+			 
+		}
 		
 		
 	}
@@ -198,7 +210,7 @@ public class GrensesnittController {
 			
 			int nyValg = scanner.nextInt();
 			
-			ansattKategori(nyValg);
+			avdelingKategori(valg);
             
         }
 		
@@ -253,7 +265,7 @@ public class GrensesnittController {
 			
 			int nyValg = scanner.nextInt();
 			
-			ansattKategori(nyValg);
+			prosjektKategori(valg);
             
         }
 	}

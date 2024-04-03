@@ -8,6 +8,7 @@ import java.util.Scanner;
 import com.dat107.oblig3.dao.AnsattDAO;
 import com.dat107.oblig3.dao.AvdelingDAO;
 import com.dat107.oblig3.dao.ProsjektDAO;
+import com.dat107.oblig3.grensesnitt.GrensesnittController;
 import com.dat107.oblig3.model.Ansatt;
 import com.dat107.oblig3.model.Avdeling;
 
@@ -36,43 +37,11 @@ public class Main {
         Ansatt ansatt8 = new Ansatt("user8", "Matthew", "Taylor", new Date(2022, 11, 11), "System Administrator", 4700, avdeling1,null);
         Ansatt ansatt9 = new Ansatt("user9", "Olivia", "Anderson", new Date(2022, 11, 11), "HR Manager", 6000, avdeling1,null);
         Ansatt ansatt10 = new Ansatt("user10", "Daniel", "Lee", new Date(2022, 11, 11), "Software Engineer", 5200, avdeling2,null);
-//
-////        List<Ansatt> list = Arrays.asList(ansatt5,ansatt6,ansatt7,ansatt8);
-//        
-//       Avdeling  avdeling = avdelingDAO.finnAvdelingMedId(3);
-//       ansatt10.setAvdeling(avdeling);
-//       
-//        ansattDAO.leggTilAnsatt(ansatt10);
-////        avdelingDAO.leggTilAvdeling(avdeling1);
-//        
-
-//        Get ansatt by id
-//        Ansatt ansatt = ansattDAO.finnAnsattMedId(13);
         
         
-        Ansatt ansatt = ansattDAO.finnAnsattMedId(5);
+        GrensesnittController controller = new GrensesnittController();
         
-        ansattDAO.fjernAnsatt(ansatt);
-        
-        
-    
-       
-//        
-//        System.out.println(jd.toString());
-//        
-//      ansattDAO.oppdaterAnsattAvdeling(jd, avdeling1);
-        
-        
-//      Get avdeling  by id
-//        Avdeling avdeling = avdelingDAO.finnAvdelingMedId(3);
-//        
-//        System.out.println(avdeling);
-//        
-//        avdelingDAO.oppdaterAvdelingSjef(avdeling, ansatt);
-
-       
-      
-//      Ansatt j = ansattDAO.finnAnsattMedId(5);
+        controller.start();
 
     }
     
