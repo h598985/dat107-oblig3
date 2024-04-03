@@ -1,6 +1,7 @@
 package com.dat107.oblig3.grensesnitt;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
@@ -78,6 +79,8 @@ public class AnsattGrensesnitt {
     
     public void OppdaterStillingTilAnsatt() {
     	
+    
+    	
         System.out.print("Skriv inn ansatt-id: ");
         
         int id = scanner.nextInt();
@@ -124,12 +127,6 @@ public class AnsattGrensesnitt {
         System.out.print("Etternavn: ");
         
         String etternavn = scanner.nextLine();
-        
-        System.out.print("Dato for ansettelse (YYYY-MM-DD): ");
-        
-        String ansettelsesdato = scanner.nextLine();
-        
-        Date date = Date.valueOf(ansettelsesdato);
         		
         System.out.print("Stilling: ");
         
@@ -158,7 +155,7 @@ public class AnsattGrensesnitt {
         
         if (avdeling != null) {
         	
-            Ansatt nyAnsatt = new Ansatt(brukernavn,fornavn,etternavn,date,stilling,loenn,avdeling,null);
+            Ansatt nyAnsatt = new Ansatt(brukernavn,fornavn, etternavn,LocalDate.now(),stilling,loenn,avdeling,null);
             
             ansattDAO.leggTilAnsatt(nyAnsatt);
             

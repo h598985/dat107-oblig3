@@ -3,6 +3,7 @@ package com.dat107.oblig3.model;
 
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -32,7 +33,7 @@ public class Ansatt {
 
     private String etternavn;
 
-    private Date ansettelsesdato;
+    private LocalDate ansettelsesdato;
 
     private String stilling;
 
@@ -53,7 +54,7 @@ public class Ansatt {
 
 
 
-	public Ansatt( String brukernavn, String fornavn, String etternavn, Date ansettelsesdato,
+	public Ansatt( String brukernavn, String fornavn, String etternavn, LocalDate ansettelsesdato,
 			String stilling, Integer maanedslonn, Avdeling avdeling,List<Prosjektdeltagelse> prosjektdeltagelser) {
 		super();
 		this.brukernavn = brukernavn;
@@ -125,14 +126,14 @@ public class Ansatt {
 
 
 
-	public Date getAnsettelsesdato() {
+	public LocalDate getAnsettelsesdato() {
 		return ansettelsesdato;
 	}
 
 
 
 
-	public void setAnsettelsesdato(Date ansettelsesdato) {
+	public void setAnsettelsesdato(LocalDate ansettelsesdato) {
 		this.ansettelsesdato = ansettelsesdato;
 	}
 

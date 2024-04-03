@@ -139,9 +139,10 @@ public class ProjsektGrensesnitt {
 	
 	public void skrivUtProsjektInformasjon() {
 		
-		System.out.print("Skriv inn prosjekt-id: ");
+		System.out.print("Skriv inn prosjekt-id: \n");
+		
         int prosjektId = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+
 
         Prosjekt prosjekt = prosjektDAO.finnProsjektMedId(prosjektId);
         
@@ -161,8 +162,6 @@ public class ProjsektGrensesnitt {
                 System.out.println("  Rolle: " + deltakelse.getRolle());
                 System.out.println("  Antall timer: " + deltakelse.getAntallTimer());
             }
-            
-//            System.out.println("Totalt timetall for prosjektet: " + prosjekt.getTotalTimer());
             
         } else {
         	
