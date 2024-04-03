@@ -27,6 +27,8 @@ public class AnsattGrensesnitt {
         
         int id = scanner.nextInt();
         
+        System.out.println(id);
+        
         Ansatt ansatt = ansattDAO.finnAnsattMedId(id);
         
         if (ansatt != null) {

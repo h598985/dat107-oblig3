@@ -87,6 +87,7 @@ public class GrensesnittController {
 	    		System.out.println("\n3. List alle prosjekter");
 	    		System.out.println("\n4. List detaljert info om prosjekt");
 	    		System.out.println("\n5. Fjern prosjekt");
+
 	    		
 //	    		System.out.println("\n6. Legg til ansatt på prosjekt");
 //	    		System.out.println("\n7. Legg til timer for ansatt");
@@ -141,15 +142,20 @@ public class GrensesnittController {
             
         case 4:
         	
-        	ansattGrensesnitt.leggTilNyAnsatt();
+        	ansattGrensesnitt.OppdaterStillingTilAnsatt();
             
             break;
             
         case 5:
         	
-        	ansattGrensesnitt.fjernAnsatt();
+        	ansattGrensesnitt.leggTilNyAnsatt();
             
             break;
+            
+           
+         case 6:
+            	
+            ansattGrensesnitt.fjernAnsatt();
             
 		default:
 			

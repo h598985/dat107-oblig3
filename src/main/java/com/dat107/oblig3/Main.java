@@ -23,25 +23,40 @@ public class Main {
     	
         
         
-        Avdeling avdeling1 = new Avdeling("IT",null, Arrays.asList());
-        Avdeling avdeling2 = new Avdeling("HR",null, Arrays.asList());
-        
-        
-        Ansatt ansatt1 = new Ansatt("user1", "John", "Doe", new Date(2022, 11, 11), "Manager", 23000, avdeling1,null);
-        Ansatt ansatt2 = new Ansatt("user2", "Jane", "Smith",new Date(2022, 11, 11), "Developer", 4000, avdeling1,null);
-        Ansatt ansatt3 = new Ansatt("user3", "Alice", "Johnson", new Date(2022, 11, 11), "HR Specialist", 4500, avdeling1,null);
-        Ansatt ansatt4 = new Ansatt("user4", "Bob", "Brown", new Date(2022, 11, 11), "Analyst", 4200, avdeling1,null);
-        Ansatt ansatt5 = new Ansatt("user5", "Emily", "Wilson", new Date(2022, 11, 11), "Designer", 4800, avdeling1,null);
-        Ansatt ansatt6 = new Ansatt("user6", "Michael", "Jones",new Date(2022, 11, 11), "IT Manager", 5500, avdeling1,null);
-        Ansatt ansatt7 = new Ansatt("user7", "Sophia", "Martinez", new Date(2022, 11, 11), "Tester", 4100, avdeling1,null);
-        Ansatt ansatt8 = new Ansatt("user8", "Matthew", "Taylor", new Date(2022, 11, 11), "System Administrator", 4700, avdeling1,null);
-        Ansatt ansatt9 = new Ansatt("user9", "Olivia", "Anderson", new Date(2022, 11, 11), "HR Manager", 6000, avdeling1,null);
-        Ansatt ansatt10 = new Ansatt("user10", "Daniel", "Lee", new Date(2022, 11, 11), "Software Engineer", 5200, avdeling2,null);
+//        Avdeling avdeling1 = new Avdeling("IT",null, Arrays.asList());
+//        Avdeling avdeling2 = new Avdeling("HR",null, Arrays.asList());
+//        
+//        
+//        Ansatt ansatt1 = new Ansatt("user1", "John", "Doe", new Date(2022, 11, 11), "Manager", 23000, avdeling1,null);
+//        Ansatt ansatt2 = new Ansatt("user2", "Jane", "Smith",new Date(2022, 11, 11), "Developer", 4000, avdeling1,null);
+//        Ansatt ansatt3 = new Ansatt("user3", "Alice", "Johnson", new Date(2022, 11, 11), "HR Specialist", 4500, avdeling1,null);
+//        Ansatt ansatt4 = new Ansatt("user4", "Bob", "Brown", new Date(2022, 11, 11), "Analyst", 4200, avdeling1,null);
+//        Ansatt ansatt5 = new Ansatt("user5", "Emily", "Wilson", new Date(2022, 11, 11), "Designer", 4800, avdeling1,null);
+//        Ansatt ansatt6 = new Ansatt("user6", "Michael", "Jones",new Date(2022, 11, 11), "IT Manager", 5500, avdeling1,null);
+//        Ansatt ansatt7 = new Ansatt("user7", "Sophia", "Martinez", new Date(2022, 11, 11), "Tester", 4100, avdeling1,null);
+//        Ansatt ansatt8 = new Ansatt("user8", "Matthew", "Taylor", new Date(2022, 11, 11), "System Administrator", 4700, avdeling1,null);
+//        Ansatt ansatt9 = new Ansatt("user9", "Olivia", "Anderson", new Date(2022, 11, 11), "HR Manager", 6000, avdeling1,null);
+//        Ansatt ansatt10 = new Ansatt("user10", "Daniel", "Lee", new Date(2022, 11, 11), "Software Engineer", 5200, avdeling2,null);
         
         
         GrensesnittController controller = new GrensesnittController();
         
         controller.start();
+    	
+    	
+//    	List<Ansatt> liste = ansattDAO.hentAlleAnsatte();
+//    	
+//    	
+//    	for (Ansatt ansatt : liste) {
+//			
+//    		System.out.println(ansatt);
+//		}
+    	
+    	
+//    	Ansatt ansatt = ansattDAO.finnAnsattMedBrukernavn("user0");
+//    	
+//    	System.out.println(ansatt);
+    	
 
     }
     
