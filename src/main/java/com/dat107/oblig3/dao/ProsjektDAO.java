@@ -130,7 +130,7 @@ public class ProsjektDAO {
 
 		try {
 			
-			Query query = entityManager.createQuery("SELECT a FROM Ansatt a");
+			Query query = entityManager.createQuery("SELECT p FROM Prosjekt p");
 			
 			prosjekter = query.getResultList();
 			

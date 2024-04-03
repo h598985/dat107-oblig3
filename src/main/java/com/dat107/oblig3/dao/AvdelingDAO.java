@@ -152,7 +152,7 @@ public class AvdelingDAO {
     	try {
     		entityManager.getTransaction().begin();
     		
-            Query query = entityManager.createQuery("SELECT a FROM Ansatt a");
+            Query query = entityManager.createQuery("SELECT a FROM Avdeling a");
             
             avdelinger = query.getResultList();
             

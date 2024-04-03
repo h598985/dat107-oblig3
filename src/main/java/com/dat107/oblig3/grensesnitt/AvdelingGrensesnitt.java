@@ -78,7 +78,9 @@ public class AvdelingGrensesnitt {
 		
 		System.out.println("Liste over alle avdelinger:");
 		
-        for (Avdeling avdeling : avdelingDAO.henteAlleAvdeling()) {
+		List<Avdeling> avdelinger = avdelingDAO.henteAlleAvdeling();
+		
+        for (Avdeling avdeling : avdelinger) {
         	
             System.out.println("\n" + avdeling);
         }

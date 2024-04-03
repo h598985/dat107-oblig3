@@ -124,17 +124,25 @@ public class AnsattDAO {
 				
             	a.setStilling(nyStilling);
             	
-            	 entityManager.merge(ansatt);
+            	entityManager.merge(a);
+            	 
+            	 
+            	entityManager.getTransaction().commit();
+      			
+            	 
 			} else {
 				
 				System.out.println("Det angitte ansattet finnes ikke i databasen");
 			}
             
            
-            entityManager.getTransaction().commit();
-			
+          
 		} catch (Exception e) {
-			entityManager.getTransaction().rollback();
+			
+			if (entityManager.getTransaction().isActive()) {
+				entityManager.getTransaction().rollback();
+			}
+			
 			System.out.println("Feil i oppdaterAnsatt");
 			
 		}finally {

@@ -42,6 +42,15 @@ public class Main {
         GrensesnittController controller = new GrensesnittController();
         
         controller.start();
+        
+        
+//        List<Avdeling> avdelinger = avdelingDAO.henteAlleAvdeling();
+//        
+//        
+//        for (Avdeling avdeling : avdelinger) {
+//			
+//        	System.out.println(avdeling);
+//		}
     	
     	
 //    	List<Ansatt> liste = ansattDAO.hentAlleAnsatte();
@@ -56,6 +65,9 @@ public class Main {
 //    	Ansatt ansatt = ansattDAO.finnAnsattMedBrukernavn("user0");
 //    	
 //    	System.out.println(ansatt);
+//    	
+//    	
+//    	ansattDAO.oppdaterAnsattStilling(ansatt, " Asistant manager");
     	
 
     }
