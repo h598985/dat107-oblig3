@@ -1,5 +1,5 @@
 
-drop schema if exists oblig3;
+drop schema if exists oblig3 CASCADE;
 
 create schema oblig3;
 
@@ -74,42 +74,42 @@ values
 
 INSERT INTO avdeling (navn, sjef_id)
 VALUES
-    ('Engineering', 52),
-    ('Marketing', 55),
-    ('Finance', 56),
-    ('Human Resources', 60),
-    ('Sales', 61),
-    ('IT', 54);
+    ('Engineering', 1),
+    ('Marketing', 5),
+    ('Finance', 3),
+    ('Human Resources', 4),
+    ('Sales', 2),
+    ('IT', 6);
    
    
    update ansatt
    set avdeling_id = 1
-   where ansatt_id = 52;
+   where ansatt_id = 1;
   
    update ansatt
    set avdeling_id = 2
-   where ansatt_id = 55;
+   where ansatt_id = 2;
   
     update ansatt
    set avdeling_id = 3
-   where ansatt_id = 56;
+   where ansatt_id = 3;
   
     update ansatt
    set avdeling_id = 4
-   where ansatt_id = 60;
+   where ansatt_id = 4;
   
     update ansatt
    set avdeling_id = 5
-   where ansatt_id = 61;
+   where ansatt_id = 5;
   
     update ansatt
    set avdeling_id = 6
-   where ansatt_id = 54;
+   where ansatt_id = 6;
   
   
 UPDATE ansatt
 SET avdeling_id = 3
-WHERE ansatt_id IN (53, 57, 58, 62,59);
+WHERE ansatt_id IN (7, 8, 9, 10, 11);
             
 
   
@@ -130,12 +130,12 @@ VALUES
 
 INSERT INTO prosjektdeltagelse (ansatt_id, prosjekt_id, rolle, antall_timer)
 VALUES
-    (52, 1, 'Developer', 40),
-    (53, 2, 'Analyst', 35),
-    (54, 3, 'Manager', 45),
-    (55, 4, 'Specialist', 38),
-    (56, 5, 'Manager', 42),
-    (60, 6, 'Accountant', 37);
+    (1, 1, 'Developer', 40),
+    (2, 2, 'Analyst', 35),
+    (3, 3, 'Manager', 45),
+    (4, 4, 'Specialist', 38),
+    (5, 5, 'Manager', 42),
+    (6, 6, 'Accountant', 37);
    
    
    
