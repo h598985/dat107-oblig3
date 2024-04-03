@@ -3,6 +3,7 @@ package com.dat107.oblig3.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,56 +17,61 @@ public class Prosjekt {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "prosjekt_id")
+    private int prosjektId;
     private String navn;
     private String beskrivelse;
+    
+    @OneToMany(mappedBy = "prosjekt")
+    private List<Prosjektdeltagelse> prosjektdeltagelser;
     
     
     public Prosjekt() {
     	
     }
-    public Prosjekt(String navn, String beskrivelse) {
+    
+    public Prosjekt(String navn, String beskrivelse, List<Prosjektdeltagelse> prosjektdeltagelser) {
+    	
     	this.navn = navn;
     	this.beskrivelse = beskrivelse;
-    }
-    
-    
-    public void skrivUt(String innrykk) {
-        
-    }
-    
-    public void skrivUtMedAnsatte() {
-   
+    	this.prosjektdeltagelser = prosjektdeltagelser;   	
     }
 
-    public void leggTilProsjektdeltagelse(Prosjektdeltagelse prosjektdeltagelse) {
-      
-    }
+	public int getProsjektId() {
+		return prosjektId;
+	}
 
-    public void fjernProsjektdeltagelse(Prosjektdeltagelse prosjektdeltagelse) {
-       
-    }
-	public int getId() {
-		return id;
+	public void setProsjektId(int prosjektId) {
+		this.prosjektId = prosjektId;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public String getNavn() {
 		return navn;
 	}
+
 	public void setNavn(String navn) {
 		this.navn = navn;
 	}
+
 	public String getBeskrivelse() {
 		return beskrivelse;
 	}
+
 	public void setBeskrivelse(String beskrivelse) {
 		this.beskrivelse = beskrivelse;
 	}
-	@Override
-	public String toString() {
-		return "Prosjekt [id=" + id + ", navn=" + navn + ", beskrivelse=" + beskrivelse + "]";
+
+	public List<Prosjektdeltagelse> getProsjektdeltagelser() {
+		return prosjektdeltagelser;
 	}
 
+	public void setProsjektdeltagelser(List<Prosjektdeltagelse> prosjektdeltagelser) {
+		this.prosjektdeltagelser = prosjektdeltagelser;
+	}
+
+	@Override
+	public String toString() {
+		return "Prosjekt [prosjektId=" + prosjektId + ", navn=" + navn + ", beskrivelse=" + beskrivelse + "]";
+	}
+   
 }

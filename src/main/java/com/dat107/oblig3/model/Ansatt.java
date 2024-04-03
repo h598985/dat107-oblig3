@@ -3,12 +3,17 @@ package com.dat107.oblig3.model;
 
 
 import java.sql.Date;
+import java.util.List;
 
-
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -18,7 +23,8 @@ public class Ansatt {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer anstattId;
+    @Column(name = "ansatt_id")
+    private Integer ansattId;
 
     private String brukernavn;
 
@@ -32,40 +38,46 @@ public class Ansatt {
 
     private Integer maanedslonn;
     
+    @ManyToOne()
+    @JoinColumn(name = "avdeling_id")
+    private Avdeling avdeling;
     
+    @OneToMany(mappedBy = "ansatt")
+    private List<Prosjektdeltagelse> prosjektdeltagelser;
    
 
     public Ansatt() {
 		super();
 	}
-    
-    
-    
 
-	public Ansatt(Integer anstattId, String brukernavn, String fornavn, String etternavn, Date ansattelsesdato,
-			String stilling, Integer maanedslonn) {
+
+
+
+	public Ansatt( String brukernavn, String fornavn, String etternavn, Date ansettelsesdato,
+			String stilling, Integer maanedslonn, Avdeling avdeling,List<Prosjektdeltagelse> prosjektdeltagelser) {
 		super();
-		this.anstattId = anstattId;
 		this.brukernavn = brukernavn;
 		this.fornavn = fornavn;
 		this.etternavn = etternavn;
-		this.ansettelsesdato = ansattelsesdato;
+		this.ansettelsesdato = ansettelsesdato;
 		this.stilling = stilling;
 		this.maanedslonn = maanedslonn;
-	}
-
-	
-
-
-	public Integer getAnstattId() {
-		return anstattId;
+		this.avdeling = avdeling;
+		this.prosjektdeltagelser = prosjektdeltagelser;
 	}
 
 
 
 
-	public void setAnstattId(Integer anstattId) {
-		this.anstattId = anstattId;
+	public Integer getAnsattId() {
+		return ansattId;
+	}
+
+
+
+
+	public void setAnsattId(Integer anstattId) {
+		this.ansattId = anstattId;
 	}
 
 
@@ -113,15 +125,15 @@ public class Ansatt {
 
 
 
-	public Date getAnsattelsesdato() {
+	public Date getAnsettelsesdato() {
 		return ansettelsesdato;
 	}
 
 
 
 
-	public void setAnsattelsesdato(Date ansattelsesdato) {
-		this.ansettelsesdato = ansattelsesdato;
+	public void setAnsettelsesdato(Date ansettelsesdato) {
+		this.ansettelsesdato = ansettelsesdato;
 	}
 
 
@@ -155,13 +167,38 @@ public class Ansatt {
 
 
 
+	public Avdeling getAvdeling() {
+		return avdeling;
+	}
+
+
+
+
+	public void setAvdeling(Avdeling avdeling) {
+		this.avdeling = avdeling;
+	}
+
+
+	public List<Prosjektdeltagelse> getProsjektdeltagelser() {
+		return prosjektdeltagelser;
+	}
+
+
+
+
+	public void setProsjektdeltagelser(List<Prosjektdeltagelse> prosjektdeltagelser) {
+		this.prosjektdeltagelser = prosjektdeltagelser;
+	}
+
+
+
+
 	@Override
 	public String toString() {
-		return "Ansatt [ansId=" + anstattId + ", brukernavn=" + brukernavn + ", fornavn=" + fornavn + ", etternavn="
-				+ etternavn + ", ansattelsesdato=" + ansettelsesdato + ", stilling=" + stilling + ", maanedslonn="
-				+ maanedslonn + "]";
+		return "Ansatt [anstattId=" + ansattId + ", brukernavn=" + brukernavn + ", fornavn=" + fornavn + ", etternavn="
+				+ etternavn + ", ansettelsesdato=" + ansettelsesdato + ", stilling=" + stilling + ", maanedslonn="
+				+ maanedslonn +  "]";
 	}
     
-    
-    
+
 }

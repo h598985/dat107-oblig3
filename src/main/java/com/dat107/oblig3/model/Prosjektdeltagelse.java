@@ -1,6 +1,7 @@
 package com.dat107.oblig3.model;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,55 +11,86 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema = "oblig3_jpa")
+@Table(name = "Prosjektdeltagelse")
 public class Prosjektdeltagelse {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int prosjektdeltagelse_Id;
+	@Column(name = "prosjektdeltagelse_id")
+    private int prosjektdeltagelseId;
     
-    private int timer;
+	@Column(name = "antall_timer")
+    private int antallTimer;
+    
     private String rolle;
+    
+    @ManyToOne()
+    @JoinColumn(name = "ansatt_id")
     private Ansatt ansatt;
+    
+    @ManyToOne()
+    @JoinColumn(name = "prosjekt_id")
     private Prosjekt prosjekt;
 
     
+    
+
 public Prosjektdeltagelse() {}
     
-    public Prosjektdeltagelse(Ansatt ansatt, Prosjekt prosjekt, int timer, String rolle) {
+    public Prosjektdeltagelse(Ansatt ansatt, Prosjekt prosjekt, int antallTimer, String rolle) {
         this.ansatt = ansatt;
         this.prosjekt = prosjekt;
-        this.timer = timer;
+        this.antallTimer = antallTimer;
         this.rolle = rolle;
         
 
     }
-    
-    public void skrivUt(String innrykk) {
-    	
-        System.out.printf("%sDeltagelse: %s %s, %s, %d timer, %s", innrykk, 
-                ansatt.getFornavn(), ansatt.getEtternavn(), prosjekt.getNavn(), timer, rolle);
-    }
 
-	public int getTimer() {
-		return timer;
+	public int getProsjektdeltagelseId() {
+		return prosjektdeltagelseId;
 	}
 
-	public void setTimer(int timer) {
-		this.timer = timer;
+	public void setProsjektdeltagelseId(int prosjektdeltagelseId) {
+		this.prosjektdeltagelseId = prosjektdeltagelseId;
 	}
 
-	public void leggtilTimer(int timer) {
-		this.timer += timer;
-		
+	public int getAntallTimer() {
+		return antallTimer;
+	}
+
+	public void setAntallTimer(int antallTimer) {
+		this.antallTimer = antallTimer;
+	}
+
+	public String getRolle() {
+		return rolle;
+	}
+
+	public void setRolle(String rolle) {
+		this.rolle = rolle;
+	}
+
+	public Ansatt getAnsatt() {
+		return ansatt;
+	}
+
+	public void setAnsatt(Ansatt ansatt) {
+		this.ansatt = ansatt;
+	}
+
+	public Prosjekt getProsjekt() {
+		return prosjekt;
+	}
+
+	public void setProsjekt(Prosjekt prosjekt) {
+		this.prosjekt = prosjekt;
 	}
 
 	@Override
 	public String toString() {
-		return "Prosjektdeltagelse [prosjektdeltagelse_Id=" + prosjektdeltagelse_Id + ", timer=" + timer + ", rolle="
-				+ rolle + ", ansatt=" + ansatt + ", prosjekt=" + prosjekt + "]";
+		return "Prosjektdeltagelse [prosjektdeltagelseId=" + prosjektdeltagelseId + ", antallTimer=" + antallTimer
+				+ ", rolle=" + rolle + ", ansatt=" + ansatt.getFornavn() + ", prosjekt=" + prosjekt.getNavn() + "]";
 	}
-    
     
 }
 
