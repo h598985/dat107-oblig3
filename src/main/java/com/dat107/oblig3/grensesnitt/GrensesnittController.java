@@ -194,21 +194,16 @@ public class GrensesnittController {
             
         case 4:
         	
-            ansattGrensesnitt.OppdaterStillingTilAnsatt();
-            
+        	avdelingGrensesnitt.leggTilNyAvdeling();
+        	
             break;
             
         case 5:
         	
-        	avdelingGrensesnitt.leggTilNyAvdeling();
-            
-            break;
-            
-        case 6:
-            
         	avdelingGrensesnitt.FjernAvdeling();
-        	
+            
             break;
+            
             
 		default:
 			

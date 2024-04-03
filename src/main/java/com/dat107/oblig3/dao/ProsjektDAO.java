@@ -103,8 +103,8 @@ public class ProsjektDAO {
 		try {
 			
 			entityManager.getTransaction().begin();
-			
-			entityManager.remove(p);
+			Prosjekt prosjekt = entityManager.merge(p);
+			entityManager.remove(prosjekt);
 			
 			entityManager.getTransaction().commit();
 			
